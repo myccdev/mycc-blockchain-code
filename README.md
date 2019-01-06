@@ -1,11 +1,5 @@
-BitShares Core
+mycc-blockchain-code
 ==============
-
-[Build Status](https://travis-ci.org/bitshares/bitshares-core/branches):
-
-`master` | `develop` | `hardfork` | `testnet` | `bitshares-fc` 
- --- | --- | --- | --- | ---
- [![](https://travis-ci.org/bitshares/bitshares-core.svg?branch=master)](https://travis-ci.org/bitshares/bitshares-core) | [![](https://travis-ci.org/bitshares/bitshares-core.svg?branch=develop)](https://travis-ci.org/bitshares/bitshares-core) | [![](https://travis-ci.org/bitshares/bitshares-core.svg?branch=hardfork)](https://travis-ci.org/bitshares/bitshares-core) | [![](https://travis-ci.org/bitshares/bitshares-core.svg?branch=testnet)](https://travis-ci.org/bitshares/bitshares-core) | [![](https://travis-ci.org/bitshares/bitshares-fc.svg?branch=master)](https://travis-ci.org/bitshares/bitshares-fc) 
 
 
 * [Getting Started](#getting-started)
@@ -15,19 +9,12 @@ BitShares Core
 * [FAQ](#faq)
 * [License](#license)
 
-BitShares Core is the BitShares blockchain implementation and command-line interface.
-The web wallet is [BitShares UI](https://github.com/bitshares/bitshares-ui).
-
-Visit [BitShares.org](https://bitshares.org/) to learn about BitShares and join the community at [BitSharesTalk.org](https://bitsharestalk.org/).
-
-Information for developers can be found in the [Bitshares Developer Portal](https://dev.bitshares.works/). Users interested in how bitshares works can go to the [BitShares Documentation](https://how.bitshares.works/) site.
-
-For security issues and bug bounty program please visit [Hack the DEX](https://hackthedex.io).
+mycc-blockchain Core is the mycc blockchain implementation and command-line interface.
 
 Getting Started
 ---------------
 Build instructions and additional documentation are available in the
-[wiki](https://github.com/bitshares/bitshares-core/wiki).
+[wiki](https://github.com/myccdev/mycc-blockchain-code/wiki).
 
 We recommend building on Ubuntu 16.04 LTS (64-bit) 
 
@@ -38,7 +25,7 @@ We recommend building on Ubuntu 16.04 LTS (64-bit)
 
 **Build Script:**
 
-    git clone https://github.com/bitshares/bitshares-core.git
+    git clone https://github.com/myccdev/mycc-blockchain-code.git
     cd bitshares-core
     git checkout master # may substitute "master" with current release tag
     git submodule update --init --recursive
@@ -47,7 +34,7 @@ We recommend building on Ubuntu 16.04 LTS (64-bit)
 
 **Upgrade Script** (prepend to the Build Script above if you built a prior release):
 
-    git remote set-url origin https://github.com/bitshares/bitshares-core.git
+    git remote set-url origin https://github.com/myccdev/mycc-blockchain-code.git
     git checkout master
     git remote set-head origin --auto
     git pull
@@ -55,15 +42,15 @@ We recommend building on Ubuntu 16.04 LTS (64-bit)
     git submodule sync --recursive
     git submodule update --init --recursive
 
-**NOTE:** BitShares requires a [Boost](http://www.boost.org/) version in the range [1.57 - 1.65.1]. Versions earlier than
+**NOTE:** mycc requires a [Boost](http://www.boost.org/) version in the range [1.57 - 1.65.1]. Versions earlier than
 1.57 or newer than 1.65.1 are NOT supported. If your system's Boost version is newer, then you will need to manually build
 an older version of Boost and specify it to CMake using `DBOOST_ROOT`.
 
-**NOTE:** BitShares requires a 64-bit operating system to build, and will not build on a 32-bit OS.
+**NOTE:** mycc requires a 64-bit operating system to build, and will not build on a 32-bit OS.
 
-**NOTE:** BitShares now supports Ubuntu 18.04 LTS
+**NOTE:** mycc now supports Ubuntu 18.04 LTS
 
-**NOTE:** BitShares now supports OpenSSL 1.1.0
+**NOTE:** mycc now supports OpenSSL 1.1.0
 
 **After Building**, the `witness_node` can be launched with:
 
@@ -100,15 +87,6 @@ If you send private keys over this connection, `rpc-endpoint` should be bound to
 Use `help` to see all available wallet commands. Source definition and listing of all commands is available
 [here](https://github.com/bitshares/bitshares-core/blob/master/libraries/wallet/include/graphene/wallet/wallet.hpp).
 
-Support
--------
-Technical support is available in the [BitSharesTalk technical support subforum](https://bitsharestalk.org/index.php?board=45.0).
-
-BitShares Core bugs can be reported directly to the [issue tracker](https://github.com/bitshares/bitshares-core/issues).
-
-BitShares UI bugs should be reported to the [UI issue tracker](https://github.com/bitshares/bitshares-ui/issues)
-
-Up to date online Doxygen documentation can be found at [Doxygen](https://bitshares.org/doxygen/hierarchy.html)
 
 Using the API
 -------------
@@ -175,11 +153,6 @@ With the above configuration, here is an example of how to call `add_node` from 
 Note, the call to `network_node` is necessary to obtain the correct API identifier for the network API.  It is not guaranteed that the network API identifier will always be `2`.
 
 Since the `network_node` API requires login, it is only accessible over the websocket RPC.  Our `doxygen` documentation contains the most up-to-date information
-about API's for the [witness node](https://bitshares.github.io/doxygen/namespacegraphene_1_1app.html) and the
-[wallet](https://bitshares.github.io/doxygen/classgraphene_1_1wallet_1_1wallet__api.html).
-If you want information which is not available from an API, it might be available
-from the [database](https://bitshares.github.io/doxygen/classgraphene_1_1chain_1_1database.html);
-it is fairly simple to write API methods to expose database methods.
 
 FAQ
 ---
@@ -252,7 +225,3 @@ FAQ
     connecting to.  Therefore the API to add p2p connections needs to be set up with proper access
     controls.
  
-License
--------
-BitShares Core is under the MIT license. See [LICENSE](https://github.com/bitshares/bitshares-core/blob/master/LICENSE.txt)
-for more information.
